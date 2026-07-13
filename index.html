@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoLove Books</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d0f;
+      color: #f4f4f4;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #151518;
+      border-bottom: 1px solid #2a2a30;
+      padding: 18px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #f5b942;
+    }
+
+    nav a {
+      color: #f4f4f4;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 80px 6%;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+      min-height: 520px;
+      background: linear-gradient(135deg, #0d0d0f, #1b1510);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      line-height: 0.95;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #f5b942;
+    }
+
+    .hero p {
+      max-width: 560px;
+      color: #b8b8bd;
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+    }
+
+    .button {
+      display: inline-block;
+      background: #f5b942;
+      color: #111;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .featured-card {
+      background: #201711;
+      border: 1px solid #5b3d1d;
+      border-radius: 18px;
+      padding: 36px;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .featured-card small {
+      color: #f5b942;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .featured-card h2 {
+      font-size: 2.4rem;
+      margin: 10px 0;
+    }
+
+    .section {
+      padding: 65px 6%;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+    }
+
+    .books {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .book {
+      background: #17171b;
+      border: 1px solid #2a2a30;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .cover {
+      height: 250px;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      font-size: 1.7rem;
+      font-weight: 800;
+    }
+
+    .cover.one {
+      background: linear-gradient(135deg, #5d2f1a, #17100d);
+    }
+
+    .cover.two {
+      background: linear-gradient(135deg, #173852, #0c1720);
+    }
+
+    .cover.three {
+      background: linear-gradient(135deg, #4c285d, #170d1d);
+    }
+
+    .book-info {
+      padding: 20px;
+    }
+
+    .book-info p {
+      color: #aaaab0;
+      font-size: 0.95rem;
+      margin: 8px 0 16px;
+    }
+
+    .price {
+      color: #f5b942;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #f5b942;
+      color: #111;
+      border: none;
+      border-radius: 7px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 30px 6%;
+      border-top: 1px solid #2a2a30;
+      color: #898990;
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+      }
+
+      .books {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">NoLove Books</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#books">Books</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div>
+      <h1>Stories with <span>teeth.</span></h1>
+      <p>
+        Discover bold crime thrillers, urban mysteries, suspense novels,
+        and unforgettable characters from independent authors.
+      </p>
+      <a class="button" href="#books">Shop Books</a>
+    </div>
+
+    <div class="featured-card">
+      <small>Featured Book</small>
+      <h2>The City of No Love</h2>
+      <p>One city. Four organizations. One crown.</p>
+    </div>
+  </section>
+
+  <section class="section" id="books">
+    <h2>Featured Books</h2>
+
+    <div class="books">
+      <article class="book">
+        <div class="cover one">The City of No Love</div>
+        <div class="book-info">
+          <h3>The City of No Love</h3>
+          <p>A brutal fight for control of a city where loyalty has a price.</p>
+          <div class="price">$14.99</div>
+          <button onclick="addToCart('The City of No Love')">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="cover two">The Last King</div>
+        <div class="book-info">
+          <h3>The Last King</h3>
+          <p>A fallen ruler returns to uncover who destroyed his empire.</p>
+          <div class="price">$12.99</div>
+          <button onclick="addToCart('The Last King')">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="cover three">Black Harbor</div>
+        <div class="book-info">
+          <h3>Black Harbor</h3>
+          <p>A missing ship returns with no crew and one locked room.</p>
+          <div class="price">$13.99</div>
+          <button onclick="addToCart('Black Harbor')">Add to Cart</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About NoLove Books</h2>
+    <p>
+      NoLove Books is an independent online bookstore built for gripping,
+      original fiction and fearless storytelling.
+    </p>
+  </section>
+
+  <footer>
+    © 2026 NoLove Books. All rights reserved.
+  </footer>
+
+  <script>
+    function addToCart(bookTitle) {
+      alert(bookTitle + " was added to your cart.");
+    }
+  </script>
+
+</body>
+</html>
