@@ -84,16 +84,65 @@
       h1{font-size:3.4rem}.lead{font-size:1rem}.cards,.city-grid,.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}
       section{padding:65px 0}.buttons .btn{width:100%}.book{width:210px}.reader{padding:26px}
     }
+
+    /* Premium launch upgrade */
+    .nav-toggle{display:none;border:1px solid var(--line);background:#0b0b0c;color:var(--cream);width:44px;height:44px;border-radius:6px;font-size:1.2rem}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .btn.disabled{opacity:.72;cursor:not-allowed;background:#17130c;color:var(--gold2)}
+    .launch-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(140,23,27,.15),rgba(217,162,60,.09),rgba(31,107,75,.12));padding:13px 0;text-align:center;text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;color:#ddd}
+    .launch-strip b{color:var(--gold2)}
+    .author-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;align-items:center}
+    .author-mark{min-height:430px;border:1px solid var(--line);background:radial-gradient(circle at 50% 30%,rgba(217,162,60,.18),transparent 35%),linear-gradient(145deg,#15110b,#070707 64%);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+    .author-mark:after{content:"RRF";font-family:Georgia,serif;font-size:clamp(5.5rem,14vw,10rem);font-weight:900;letter-spacing:-.08em;color:transparent;-webkit-text-stroke:1px rgba(255,215,122,.72);text-shadow:0 0 45px rgba(217,162,60,.14)}
+    .author-copy p{color:var(--muted);font-size:1.05rem}
+    .author-signature{font-family:Georgia,serif;font-style:italic;color:var(--gold2);font-size:1.35rem;margin-top:24px}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{border:1px solid var(--line);padding:28px;background:linear-gradient(160deg,#111,#080808);min-height:230px}
+    .feature .num{font-size:.74rem;letter-spacing:.18em;color:var(--gold2);text-transform:uppercase}
+    .feature h3{font-size:2rem;margin-top:16px}
+    .feature p{color:var(--muted)}
+    .book-status{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .status-card{border:1px solid var(--line);padding:30px;background:#0a0a0b}
+    .status-card.available{background:linear-gradient(145deg,rgba(217,162,60,.12),#0a0a0b 65%)}
+    .status-card h3{font-size:2.1rem}
+    .status-card p{color:var(--muted)}
+    .badge{display:inline-flex;border:1px solid var(--gold);color:var(--gold2);padding:6px 10px;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:18px}
+    .locked{opacity:.78}
+    .locked-row{display:flex;align-items:center;gap:10px;color:#c8c1b6}
+    .praise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .praise{border:1px solid var(--line);padding:28px;background:#0b0b0c;position:relative}
+    .praise:before{content:"“";position:absolute;right:18px;top:-18px;font-family:Georgia,serif;font-size:6rem;color:rgba(217,162,60,.18)}
+    .praise p{font-family:Georgia,serif;font-size:1.18rem;line-height:1.55}
+    .praise small{color:var(--gold2);text-transform:uppercase;letter-spacing:.13em}
+    .mailing{border:1px solid var(--line);background:radial-gradient(circle at 80% 20%,rgba(217,162,60,.16),transparent 32%),linear-gradient(145deg,#12100d,#080808);padding:44px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;box-shadow:var(--shadow)}
+    .mailing h2{font-size:clamp(2.4rem,4vw,4.5rem)}
+    .mailing p{color:var(--muted);max-width:680px}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .contact-card{border:1px solid var(--line);padding:24px;background:#090909}
+    .contact-card strong{display:block;color:var(--gold2);margin-bottom:6px}
+    footer .footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center;flex-wrap:wrap}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-links a:hover{color:var(--gold2)}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:900px){
+      .nav-toggle{display:grid;place-items:center}.links{position:absolute;left:4vw;right:4vw;top:72px;display:none;flex-direction:column;background:#080808;border:1px solid var(--line);padding:20px;box-shadow:var(--shadow)}.links.open{display:flex}
+      .author-grid,.book-status,.mailing{grid-template-columns:1fr}.feature-grid,.praise-grid,.contact-grid{grid-template-columns:1fr 1fr}.mailing .btn{width:100%}
+    }
+    @media(max-width:600px){
+      .feature-grid,.praise-grid,.contact-grid{grid-template-columns:1fr}.author-mark{min-height:300px}.mailing{padding:28px}.nav-actions .cta{display:none}
+    }
   </style>
 </head>
 <body>
 <header>
   <nav class="wrap">
     <a class="brand" href="#"><span class="crown">♛</span><span>NOLOVE BOOKS</span></a>
-    <div class="links"><a href="#story">Story</a><a href="#kings">Four Kings</a><a href="#city">City</a><a href="#preview">Preview</a></div>
-    <a class="cta" href="chapter-1.html">Read Chapter 1</a>
+    <div class="links" id="navLinks"><a href="#story">Story</a><a href="#kings">Four Kings</a><a href="#city">City</a><a href="#preview">Preview</a><a href="#author">Author</a><a href="#contact">Contact</a></div>
+    <div class="nav-actions"><a class="cta" href="chapter-1.html">Read Chapter 1</a><button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button></div>
   </nav>
 </header>
+
+<div class="launch-strip"><div class="wrap"><b>Official website:</b> The City of No Love — free three-chapter preview now live</div></div>
 
 <main>
   <section class="hero">
@@ -173,6 +222,72 @@
     </div>
   </section>
 
+
+  <section id="author">
+    <div class="wrap author-grid reveal">
+      <div class="author-mark" aria-label="RRF Author monogram"></div>
+      <div class="author-copy">
+        <div class="eyebrow">About the Author</div>
+        <h2>Stories built from pressure, loyalty, and consequence.</h2>
+        <p>RRF Author creates cinematic urban crime fiction where every decision has a cost. <em>The City of No Love</em> introduces a world of rival organizations, hidden histories, and characters forced to decide what their names will mean.</p>
+        <p>This official website is the home of the series, exclusive previews, future release announcements, and behind-the-scenes worldbuilding.</p>
+        <div class="author-signature">— RRF Author</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap reveal">
+      <div class="section-head"><div class="eyebrow">The Reading Experience</div><h2>Built like a series. Written like a warning.</h2><p>A fast-moving story world designed for readers who want atmosphere, pressure, strategy, and characters with something real to lose.</p></div>
+      <div class="feature-grid">
+        <article class="feature"><div class="num">01 · Cinematic</div><h3>See the city.</h3><p>Rain-soaked streets, guarded towers, neutral ground, private clubs, and districts with their own codes.</p></article>
+        <article class="feature"><div class="num">02 · Strategic</div><h3>Follow the power.</h3><p>Every alliance, favor, record, and betrayal changes who controls the next move.</p></article>
+        <article class="feature"><div class="num">03 · Personal</div><h3>Feel the cost.</h3><p>Behind every organization is a family, a promise, and a debt somebody will eventually collect.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="release">
+    <div class="wrap reveal">
+      <div class="section-head"><div class="eyebrow">Read & Release</div><h2>Enter free. Stay for the full story.</h2></div>
+      <div class="book-status">
+        <article class="status-card available"><span class="badge">Available now</span><h3>Free Preview Edition</h3><p>Read Chapters 1–3 directly on NoLoveBooks.com and meet the forces competing for the crown.</p><div class="buttons"><a class="btn primary" href="chapter-1.html">Start Chapter 1</a><a class="btn" href="#preview">View All Chapters</a></div></article>
+        <article class="status-card locked"><span class="badge">Coming soon</span><h3>Full Book Release</h3><p>The complete edition, preorder information, release date, and official purchase links will be announced here.</p><div class="locked-row"><span>🔒</span><strong>Preorder announcement pending</strong></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="praise">
+    <div class="wrap reveal">
+      <div class="section-head"><div class="eyebrow">Why Readers Will Enter</div><h2>A city made for page-turners.</h2></div>
+      <div class="praise-grid">
+        <article class="praise"><p>A dangerous secret. Four powerful organizations. One young man caught in the middle.</p><small>High-stakes premise</small></article>
+        <article class="praise"><p>Every district feels different, but every road leads back to the same crown.</p><small>Immersive worldbuilding</small></article>
+        <article class="praise"><p>The story asks one question again and again: what are you willing to owe for power?</p><small>Crime · loyalty · consequence</small></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="mailing-list">
+    <div class="wrap reveal">
+      <div class="mailing">
+        <div><div class="eyebrow">NoLove Insider List</div><h2>Be first when the crown moves.</h2><p>Release dates, preorder news, new chapters, cover reveals, and exclusive updates will be announced here. The signup connection will be added when the official mailing-list account is ready.</p></div>
+        <a class="btn disabled" href="#contact" aria-disabled="true">Signup Coming Soon</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap reveal">
+      <div class="section-head"><div class="eyebrow">Contact & Business</div><h2>Connect with NoLove Books.</h2><p>Official contact links can be added here as soon as your author email and social pages are ready.</p></div>
+      <div class="contact-grid">
+        <div class="contact-card"><strong>Reader Updates</strong><span>Mailing list launching soon</span></div>
+        <div class="contact-card"><strong>Media & Interviews</strong><span>Official email coming soon</span></div>
+        <div class="contact-card"><strong>Social Media</strong><span>Official pages coming soon</span></div>
+      </div>
+    </div>
+  </section>
+
   <section class="final">
     <div class="wrap">
       <div class="eyebrow">The Crown Is Waiting</div>
@@ -183,6 +298,14 @@
   </section>
 </main>
 
-<footer><div class="wrap">© 2026 NoLove Books. All rights reserved. &nbsp;•&nbsp; Where every story leaves a scar.</div></footer>
+<footer><div class="wrap footer-grid"><div>© 2026 NoLove Books. All rights reserved. &nbsp;•&nbsp; Where every story leaves a scar.</div><div class="footer-links"><a href="#story">Story</a><a href="#preview">Preview</a><a href="#author">Author</a><a href="#contact">Contact</a></div></div></footer>
+<script>
+  const toggle=document.getElementById('navToggle');
+  const links=document.getElementById('navLinks');
+  toggle?.addEventListener('click',()=>links.classList.toggle('open'));
+  links?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
 </body>
 </html>
